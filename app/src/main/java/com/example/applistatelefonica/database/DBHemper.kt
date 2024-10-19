@@ -73,15 +73,19 @@ class DBHemper(context: Context): SQLiteOpenHelper( context,"database.db", null,
     }
 
 
-    fun login(userName: String, passWord: String): Boolean{
+    fun login(userName: String, passWord: String): Boolean {
         val db = this.writableDatabase
-     val c = db.rawQuery("SELECT * FROM users WHERE username =? AND password=?", arrayOf(userName, passWord))
+        val c = db.rawQuery(
+            "SELECT * FROM users WHERE username =? AND password=?",
+            arrayOf(userName, passWord)
+        )
 
-        if(c.count == 1){
+        if (c.count == 1) {
             db.close()
-        return true
-        }
+            return true
+        }else{
         db.close()
-       return false
+        return false
+        }
     }
 }
