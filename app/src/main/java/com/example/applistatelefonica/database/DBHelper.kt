@@ -15,9 +15,7 @@ class DBHemper(context: Context): SQLiteOpenHelper( context,"database.db", null,
 
     override fun onCreate(db: SQLiteDatabase?) {
 
-        sql.forEach {
-            db.execSQL(it)
-        }
+        sql.forEach { db?.execSQL(it) }
 
     }
 
