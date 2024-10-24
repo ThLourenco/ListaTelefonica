@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">AppListaTelefonica</string>
+    <string name="password_dont_t_match">Password dont\'t match</string>
+    <string name="please_insert_all_required_fields">Please insert all required fields</string>
+    <string name="sing_up">Sing Up</string>
+    <string name="login_erro">Login Erro</string>
 </resources>

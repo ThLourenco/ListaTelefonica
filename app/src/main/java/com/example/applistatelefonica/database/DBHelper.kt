@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import com.example.applistatelefonica.model.UserModel
 
-class DBHemper(context: Context): SQLiteOpenHelper( context,"database.db", null,1 ){
+class DBHelper(context: Context): SQLiteOpenHelper( context,"database.db", null,1 ){
 
     val sql = arrayOf(
         "CREATE TABLE users (id INTEGER PRIMARY KEY AUTOINCREMENT, username TEXT, password TEXT",
