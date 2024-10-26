@@ -17,13 +17,6 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.floatBtnAdd.setOnClickListener({
-
-            val intent = Intent(this, SingUpActivity::class.java)
-            startActivity(intent)
-            finish()
-        })
-
 
     }
 }

@@ -18,8 +18,6 @@ class LoginActivity : AppCompatActivity() {
         private lateinit var binding: ActivityLoginBinding
         private lateinit var sharedPreferences: SharedPreferences
         override fun onCreate(savedInstanceState: Bundle?) {
-
-
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
             binding = ActivityLoginBinding.inflate(layoutInflater)
@@ -27,6 +25,13 @@ class LoginActivity : AppCompatActivity() {
 
             val db = DBHelper(this)
             sharedPreferences = application.getSharedPreferences("login", Context.MODE_PRIVATE)
+            val username = sharedPreferences.getString("username", "")
+
+            if (username != null) {
+
+                    binding.edtUserName.setText(username)
+
+            }
 
             binding.btnLogin.setOnClickListener {
 
