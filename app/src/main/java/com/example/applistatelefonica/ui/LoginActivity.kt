@@ -25,19 +25,18 @@ class LoginActivity : AppCompatActivity() {
 
             val db = DBHelper(this)
             sharedPreferences = application.getSharedPreferences("login", Context.MODE_PRIVATE)
-            val username = sharedPreferences.getString("username", "")
+            val getUsername = sharedPreferences.getString("username", "")
 
-            if (username != null) {
-
-                    binding.edtUserName.setText(username)
-
+            val logged = binding.ckbLogged.isChecked
+            if(logged) {
+                binding.edtUserName.setText(getUsername)
             }
+
 
             binding.btnLogin.setOnClickListener {
 
                 val userName = binding.edtUserName.text.toString()
                 val passWord = binding.edtPassWord.text.toString()
-                val logged = binding.ckbLogged.isChecked
 
                 if (userName.isNotEmpty() && passWord.isNotEmpty()) {
                     if (db.login(userName, passWord)) {
