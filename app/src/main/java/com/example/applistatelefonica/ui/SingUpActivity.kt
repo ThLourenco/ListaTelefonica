@@ -1,5 +1,6 @@
 package com.example.applistatelefonica.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -33,6 +34,7 @@ class SingUpActivity : AppCompatActivity() {
                             applicationContext,
                             getString(R.string.sing_up), Toast.LENGTH_LONG
                         ).show()
+                        startActivity(Intent(this, LoginActivity::class.java))
                         finish()
                     } else {
                         Toast.makeText(

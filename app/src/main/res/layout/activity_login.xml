@@ -31,6 +31,7 @@
             android:layout_height="50dp"
             android:layout_marginTop="20dp"
             android:gravity="center"
+            android:text="admin"
             android:hint="UserName" />
 
         <EditText
@@ -39,6 +40,7 @@
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
             android:gravity="center"
+            android:text="password"
             android:hint="PassWord" />
 
         <CheckBox

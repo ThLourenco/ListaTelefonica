@@ -4,4 +4,10 @@
     <string name="please_insert_all_required_fields">Please insert all required fields</string>
     <string name="sing_up">Sing Up</string>
     <string name="login_erro">Login Erro</string>
+    <string name="name">name</string>
+    <string name="Address">Address</string>
+    <string name="Phone">Phone</string>
+    <string name="e_mail">E-mail</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
 </resources>

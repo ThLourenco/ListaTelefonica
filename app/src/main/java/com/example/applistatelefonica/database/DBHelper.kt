@@ -161,7 +161,7 @@ class DBHelper(context: Context): SQLiteOpenHelper( context,"database.db", null,
         return contactModel
     }
 
-    fun getAllContact(): List<ContactModel>{
+    fun getAllContact(): ArrayList<ContactModel>{
         val db = this.writableDatabase
         val c = db.rawQuery("SELECT * FROM contact",null)
         var listContactModel = ArrayList<ContactModel>()
