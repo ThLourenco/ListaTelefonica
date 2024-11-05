@@ -10,4 +10,5 @@
     <string name="e_mail">E-mail</string>
     <string name="cancel">Cancel</string>
     <string name="save">Save</string>
+    <string name="delete">Delete</string>
 </resources>
