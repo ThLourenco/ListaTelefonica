@@ -26,7 +26,7 @@ class ContactDetailActivity : AppCompatActivity() {
     private var contactModel = ContactModel()
 
     private lateinit var launcher: ActivityResultLauncher<Intent>
-    private var imageId: Int? = -1
+    private var imageId: Int = -1
     private val REQUEST_PHONE_CALL = 1
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,7 +55,7 @@ class ContactDetailActivity : AppCompatActivity() {
                     address = binding.editAddress.text.toString(),
                     email = binding.editEmail.text.toString(),
                     phone = binding.editPhone.text.toString().toInt(),
-                    imageId = contactModel.imageId
+                    imageId = imageId
                 )
 
                 if (res > 0) {
@@ -99,19 +99,23 @@ class ContactDetailActivity : AppCompatActivity() {
             }
 
             binding.imgContact.setOnClickListener {
-                launcher.launch(
-                    Intent(
-                        applicationContext,
-                        ContactImageSelectionActivity::class.java
-                    )
-                )
-
+               if(binding.editName.isEnabled) {
+                   launcher.launch(
+                       Intent(
+                           applicationContext,
+                           ContactImageSelectionActivity::class.java
+                       )
+                   )
+               }
             }
 
             launcher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
                 if (it.data != null && it.resultCode == 1) {
-                    imageId = it.data?.extras?.getInt("id")
-                    binding.imgContact.setImageDrawable(resources.getDrawable(imageId!!))
+                    if(it.data?.extras !=null) {
+                        imageId = it.data?.getIntExtra("id", 0)!!
+                        binding.imgContact.setImageResource((imageId!!))
+                    }
+
                 } else {
                     imageId = -1
                     binding.imgContact.setImageResource(R.drawable.default_avatar)
@@ -168,7 +172,7 @@ class ContactDetailActivity : AppCompatActivity() {
         binding.editPhone.setText(contactModel.phone.toString())
 
         if(contactModel.imageId > 0) {
-            binding.imgContact.setImageDrawable(resources.getDrawable(contactModel.imageId))
+            binding.imgContact.setImageResource(contactModel.imageId)
         }else{
             binding.imgContact.setImageResource(R.drawable.default_avatar)
         }

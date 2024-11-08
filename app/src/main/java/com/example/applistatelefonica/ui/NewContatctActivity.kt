@@ -36,7 +36,7 @@ class NewContatctActivity : AppCompatActivity() {
         launcher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
                 if(it.data !=null && it.resultCode == 1){
                      id = it.data?.extras?.getInt("id")
-                    binding.imgContact.setImageDrawable(resources.getDrawable(id!!))
+                    binding.imgContact.setImageResource(id!!)
                 }else{
                      id = -1
                     binding.imgContact.setImageResource(R.drawable.default_avatar)
