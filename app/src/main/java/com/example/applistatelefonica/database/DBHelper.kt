@@ -91,6 +91,12 @@ class DBHelper(context: Context): SQLiteOpenHelper( context,"database.db", null,
             "SELECT * FROM users WHERE username =? AND password=?",
             arrayOf(userName, passWord)
         )
+        //"WHERE username =? AND password=?": Filtra os resultados onde a coluna username é igual ao primeiro parâmetro (?) e password é igual ao segundo parâmetro (?).
+        //Observação sobre os sinais ?: São placeholders que serão substituídos pelos valores reais fornecidos no array de parâmetros.
+        //arrayOf(userName, passWord):
+        //
+        //Esse é um array com os valores que substituirão os ? na consulta, respeitando a ordem em que aparecem.
+        //userName substituirá o primeiro ?, e passWord substituirá o segundo.
 
         if (c.count == 1) {
             db.close()

@@ -20,6 +20,9 @@ class SingUpActivity : AppCompatActivity() {
 
         val db = DBHelper(this)
 
+
+        //ESTOU CRIANDO UMA NOVO USUARIO E O CADASTRANDO NO BANCO DE DADOS USERS
+
         binding.btnSingUp.setOnClickListener {
             val userName = binding.edtUserName.text.toString()
             val passWord = binding.edtPassWord.text.toString()

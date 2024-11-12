@@ -27,7 +27,7 @@ class NewContatctActivity : AppCompatActivity() {
         val db = DBHelper(applicationContext)
         val i = intent
 
-
+        //CADASTRANDO UM CONTATO NO BANCO DE DADOS CONTATOS
         binding.imgContact.setOnClickListener{
             launcher.launch(Intent(applicationContext, ContactImageSelectionActivity::class.java))
 

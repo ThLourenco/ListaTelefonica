@@ -1,13 +1,16 @@
-package com.example.applistatelefonica
+package com.example.applistatelefonica.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.applistatelefonica.R
+import com.example.applistatelefonica.adapter.holder.ContactViewHolder
 import com.example.applistatelefonica.model.ContactModel
 
 class ContactListAdapter(
     private val contactList: List<ContactModel>,
-    private val contactOnClickListener: ContactOnClickListener):
+    private val contactOnClickListener: ContactOnClickListener
+):
     RecyclerView.Adapter<ContactViewHolder>(){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ContactViewHolder {

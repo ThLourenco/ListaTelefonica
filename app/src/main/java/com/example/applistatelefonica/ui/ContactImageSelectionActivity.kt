@@ -20,7 +20,7 @@ class ContactImageSelectionActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         i = intent
-
+        // AO CLICAR EM CADA IMAGEM VAMOS SALVAR UM ID.
         binding.imgProfile1.setOnClickListener{sendId(R.drawable.jovem_female)}
         binding.imgProfile2.setOnClickListener{sendId(R.drawable.jovem_masculino)}
         binding.imgProfile3.setOnClickListener{sendId(R.drawable.moca)}

@@ -35,25 +35,31 @@ class LoginActivity : AppCompatActivity() {
 
             binding.btnLogin.setOnClickListener {
 
+                //estou inserindo o valor referente ao editText
                 val userName = binding.edtUserName.text.toString()
                 val passWord = binding.edtPassWord.text.toString()
 
+                //verificando se os valores nao estao vazios
                 if (userName.isNotEmpty() && passWord.isNotEmpty()) {
+                    // vamos puxar a funçao de login para checar os dados dentro do banco de dados.
                     if (db.login(userName, passWord)) {
+                        //se tudo ocorrer bem vamos salvar em charedpreferences o login caso o chebox esteja ativado
                         if (logged) {
                             val editor: SharedPreferences.Editor = sharedPreferences.edit()
                             editor.putString("username", userName)
                             editor.apply()
                         }
+
                         startActivity(Intent(this, MainActivity::class.java))
                         finish()
-                    } else {
+
+                    } else { // caso o login nao esteja correto aparece a mensagem de erro
                         Toast.makeText(
                             applicationContext,
                             getString(R.string.login_erro), Toast.LENGTH_LONG
                         ).show()
                     }
-                } else {
+                } else { //caso os dados nao foram preenchido aparece a mensagem de texto
                     Toast.makeText(
                         applicationContext,
                         R.string.please_insert_all_required_fields,
@@ -62,6 +68,7 @@ class LoginActivity : AppCompatActivity() {
                 }
             }
 
+            //aos clicar no texto vamos para outra pagina
             binding.txtSingUp.setOnClickListener {
                 val intent = Intent(this, SingUpActivity::class.java)
                 startActivity(intent)

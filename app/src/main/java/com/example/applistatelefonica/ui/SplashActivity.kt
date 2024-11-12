@@ -19,7 +19,7 @@ class SplashActivity : AppCompatActivity() {
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
 
-
+            // A AREA AONDE IREMOS FAZER A SPLASH ACTIVITY
             Handler(Looper.getMainLooper()).postDelayed({
                 startActivity(Intent(this, LoginActivity::class.java))
             }, 2000)

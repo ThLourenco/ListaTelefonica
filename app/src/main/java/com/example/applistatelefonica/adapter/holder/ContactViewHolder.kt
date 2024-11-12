@@ -1,9 +1,10 @@
-package com.example.applistatelefonica
+package com.example.applistatelefonica.adapter.holder
 
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.applistatelefonica.R
 
 class ContactViewHolder(view: View): RecyclerView.ViewHolder(view) {
 
